@@ -140,5 +140,13 @@ if __name__ == "__main__":
     keeper.feed_animal(mammal)
     vet.heal_animal(reptile)
 
+    # Сохранение информации о зоопарке в файл
+    zoo.save_to_file("zoo_data.pkl")
 
+    # Загрузка информации о зоопарке из файла
+    loaded_zoo = Zoo.load_from_file("zoo_data.pkl")
 
+    # Отображение загруженной информации
+    if loaded_zoo:
+        loaded_zoo.display_animals()
+        loaded_zoo.display_staff()
